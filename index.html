@@ -131,7 +131,7 @@ header{
      height: 6vh;
     width: 5vw;
     position :relative;
-    left: 74vw;
+    left: 29vw;
     top:-37vh;
 } 
 
@@ -142,6 +142,31 @@ header{
     top:-4vh;
     left:103vh;
 }
+
+
+.p1{
+    position: relative;
+    background-color: black;
+    color: white;
+    height: 3vh;
+    width: 6vw;
+    left:58vh;
+    top:-9vw;
+    text-align: center;
+}
+
+
+    
+.p2{
+    position: relative;
+    background-color:gray;
+    height: 3vh;
+    width: 6vw;
+    left:38vw;
+    top: -21vh;
+    text-align: center;
+}
+
 
 </style>
 
@@ -170,20 +195,28 @@ header{
 <div class="player">player1 turn </div>
 
 
-
-
+<div class="p1">p1</div>
+<div class="p2">p2</div>
 
 
 
 <script>
 
-
+let p1=0;
+let p2=0;
 let p=0;
 let myplayer=document.querySelector(".player")
 console.log(myplayer)
 let mydiv =[[null,null,null],[null,null,null],[null,null,null]];
 let win=false;
 let k=1;
+let pl1=document.querySelector(".p1");
+let pl2=document.querySelector(".p2");
+
+pl1.innerText="p1:"+p1
+pl2.innerText="p2:"+p2
+
+
 
 for(let i=0;i<3;i++){
     
@@ -237,43 +270,58 @@ if(mydiv[0][0].innerText==="X" &&
 }
 
 else if(mydiv[0][0].innerText==="X" && mydiv[0][1].innerText==="X"&&mydiv[0][2].innerText==="X"){
+        p1++;
     win=true;
+    pl1.innerText="p1:"+p1
     alert("player1 wins");
+
 }
 
 
 else if(mydiv[0][0].innerText==="X" && mydiv[1][0].innerText==="X"&&mydiv[2][0].innerText==="X"){
+        p1++;
     win=true;
+    pl1.innerText="p1:"+p1
     alert("player1 wins");
 }
 
 
 else if(mydiv[0][1].innerText==="X" && mydiv[1][1].innerText==="X"&&mydiv[2][1].innerText==="X"){
+        p1++;
     alert("player1 wins");
+    pl1.innerText="p1:"+p1
     win=true;
 }
 
 
 else if(mydiv[0][2].innerText==="X" && mydiv[1][1].innerText==="X"&&mydiv[2][0].innerText==="X"){
+        p1++;
     alert("player1 wins");
+    pl1.innerText="p1:"+p1
     win=true;
 }
 
 
 else if(mydiv[1][0].innerText==="X" && mydiv[1][1].innerText==="X"&&mydiv[1][2].innerText==="X"){
+        p1++;
     alert("player1 wins");
+    pl1.innerText="p1:"+p1
     win=true;
 }
 
 
 else if(mydiv[2][0].innerText==="X" && mydiv[2][1].innerText==="X"&&mydiv[2][2].innerText==="X"){
+        p1++;
     alert("player1 wins");
+    pl1.innerText="p1:"+p1
     win=true;
 }
 
 
 else if(mydiv[0][2].innerText==="X" && mydiv[1][2].innerText==="X"&&mydiv[2][2].innerText==="X"){
+    p1++;
     alert("player1 wins");
+    pl1.innerText="p1:"+p1
     win=true;
 }
 
@@ -284,49 +332,73 @@ else if(mydiv[0][2].innerText==="X" && mydiv[1][2].innerText==="X"&&mydiv[2][2].
 
 
 else if(mydiv[0][0].innerText==="O" && mydiv[1][1].innerText==="O" && mydiv[2][2].innerText==="O" ){
+    p2++;
     alert("player2 wins");
+    pl2.innerText="p2:"+p2
+
     win=true;
 }
 
 else if(mydiv[0][0].innerText==="O"  && mydiv[0][1].innerText==="O" && mydiv[0][2].innerText==="O" ){
+    p2++;
     alert("player2 wins");
+    pl2.innerText="p2:"+p2
+
     win=true;
 }
 
 
 else if(mydiv[0][0].innerText==="O"  && mydiv[1][0].innerText==="O" &&mydiv[2][0].innerText==="O" ){
+    p2++;
     alert("player2 wins");
     win=true;
+    pl2.innerText="p2:"+p2
+
 }
 
 
 else if(mydiv[0][1].innerText==="O"  && mydiv[1][1].innerText==="O" &&mydiv[2][1].innerText==="O" ){
+    p2++;
     alert("player2 wins");
     win=true;
+    pl2.innerText="p2:"+p2
+
 }
 
 
 else if(mydiv[0][2].innerText==="O"  && mydiv[1][1].innerText==="O" &&mydiv[2][0].innerText==="O" ){
+    p2++;
     alert("player2 wins");
     win=true;
+    pl2.innerText="p2:"+p2
+
 }
 
 
 else if(mydiv[1][0].innerText==="O"  && mydiv[1][1].innerText==="O" &&mydiv[1][2].innerText==="O" ){
+    p2++;
     alert("player2 wins");
     win=true;
+    pl2.innerText="p2:"+p2
+
 }
 
 
 else if(mydiv[2][0].innerText==="O"  && mydiv[2][1].innerText==="O" &&mydiv[2][2].innerText==="O" ){
+    p2++;
     alert("player2 wins");
     win=true;
+    pl2.innerText="p2:"+p2
+
 }
 
 
 else if(mydiv[0][2].innerText==="O"  && mydiv[1][2].innerText==="O" &&mydiv[2][2].innerText==="O" ){
+    p2++;
     alert("player2 wins");
     win=true; 
+    pl2.innerText="p2:"+p2
+
 }
 
 if(win==true){
