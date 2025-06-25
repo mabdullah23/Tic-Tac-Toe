@@ -7,197 +7,105 @@
 </head>
 
 <style>
-
-body{
-    background-color: chartreuse;
+body {
+  background-color: chartreuse;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-header{
-    background-color: aqua;
-    height: 10vh;
-    color: brown;
-    text-align: center;
-    position: relative;
-    width: 50vw;
-    left:45vh;
-    display: flex;
-    flex-wrap: wrap;
+header {
+  background-color: aqua;
+  color: brown;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
 }
 
-.container{
-    background-color: darkgoldenrod;
-    position: relative;
-    height: 40vh;
-    width: 45vw;
-    left: 50vh;
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: darkgoldenrod;
+  padding: 1rem;
+  width: 90vw;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  margin-top: 1rem;
 }
 
-
-
-.box1 {
-    background-color: brown;
-    position: relative;
-    height: 5vh;
-    width: 5vw;
-    text-align: center;
-    left: 14vw;
-    top:5vh;
+.container div {
+  background-color: brown;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
 }
 
-
-.box2 {
-    background-color: brown;
-    position: relative;
-    height: 5vh;
-    width: 5vw;
-    text-align: center;
-    left: 20vw;
-    top:0vh;
+.player {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: black;
+  font-weight: bold;
 }
 
-.box3 {
-    background-color: brown;
-    position: relative;
-    height: 5vh;
-    width: 5vw;
-    text-align: center;
-    left: 26vw;
-    top:-5vh;
+.reset {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.box4 {
-    background-color: brown;
-    position: relative;
-    height: 5vh;
-    width: 5vw;
-    text-align: center;
-    left: 14vw;
-    top:-3vh;
+.scores {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  max-width: 400px;
+  margin-top: 1rem;
 }
 
-.box5 {
-    background-color: brown;
-    position: relative;
-    height: 5vh;
-    width: 5vw;
-    text-align: center;
-    left: 20vw;
-    top:-8vh;
-}
-
-.box6 {
-    background-color: brown;
-    position: relative;
-    height: 5vh;
-    width: 5vw;
-    text-align: center;
-    left: 26vw;
-    top:-13vh;
-}
-
-.box7 {
-    background-color: brown;
-    position: relative;
-    height: 5vh;
-    width: 5vw;
-    text-align: center;
-    left: 14vw;
-    top:-11vh;
-}
-
-.box8 {
-    background-color: brown;
-    position: relative;
-    height: 5vh;
-    width: 5vw;
-    text-align: center;
-    left: 20vw;
-    top:-16vh;
-}
-
-.box9 {
-    background-color: brown;
-    position: relative;
-    height: 5vh;
-    width: 5vw;
-    text-align: center;
-    left: 26vw;
-    top:-21vh;
-}
-
-.player{
-    background-color:white;
-    color: black;
-     height: 6vh;
-    width: 5vw;
-    position :relative;
-    left: 29vw;
-    top:-37vh;
-} 
-
-
-
-.reset{
-    position: relative;
-    top:-4vh;
-    left:103vh;
-}
-
-
-.p1{
-    position: relative;
-    background-color: black;
-    color: white;
-    height: 3vh;
-    width: 6vw;
-    left:58vh;
-    top:-9vw;
-    text-align: center;
-}
-
-
-    
-.p2{
-    position: relative;
-    background-color:gray;
-    height: 3vh;
-    width: 6vw;
-    left:38vw;
-    top: -21vh;
-    text-align: center;
+.p1, .p2 {
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  width: 45%;
 }
 
 
 </style>
-
 <body>
-    
-
-<header>
+  <header>
     <h2>Tic Tac Toe</h2>
-</header>
+  </header>
 
-<div class="container">
-<div class="box1"></div>
-<div class="box2"></div>
-<div class="box3"></div>
-<div class="box4"></div>
-<div class="box5"></div>
-<div class="box6"></div>
-<div class="box7"></div>
-<div class="box8"></div>
-<div class="box9"></div>
+  <div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+    <div class="box7"></div>
+    <div class="box8"></div>
+    <div class="box9"></div>
+  </div>
 
-</div>
+  <div class="player">player1 turn</div>
+  <button class="reset">Restart</button>
 
-<button class="reset">restart</button>
-
-<div class="player">player1 turn </div>
-
-
-<div class="p1">p1</div>
-<div class="p2">p2</div>
-
+  <div class="scores">
+    <div class="p1">p1</div>
+    <div class="p2">p2</div>
+  </div>
+</body>
 
 
 <script>
