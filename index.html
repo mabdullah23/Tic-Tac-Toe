@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+body{
+    background-color: chartreuse;
+}
+
+header{
+    background-color: aqua;
+    height: 10vh;
+    color: brown;
+    text-align: center;
+    position: relative;
+    width: 50vw;
+    left:45vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container{
+    background-color: darkgoldenrod;
+    position: relative;
+    height: 40vh;
+    width: 45vw;
+    left: 50vh;
+}
+
+
+
+.box1 {
+    background-color: brown;
+    position: relative;
+    height: 5vh;
+    width: 5vw;
+    text-align: center;
+    left: 14vw;
+    top:5vh;
+}
+
+
+.box2 {
+    background-color: brown;
+    position: relative;
+    height: 5vh;
+    width: 5vw;
+    text-align: center;
+    left: 20vw;
+    top:0vh;
+}
+
+.box3 {
+    background-color: brown;
+    position: relative;
+    height: 5vh;
+    width: 5vw;
+    text-align: center;
+    left: 26vw;
+    top:-5vh;
+}
+
+.box4 {
+    background-color: brown;
+    position: relative;
+    height: 5vh;
+    width: 5vw;
+    text-align: center;
+    left: 14vw;
+    top:-3vh;
+}
+
+.box5 {
+    background-color: brown;
+    position: relative;
+    height: 5vh;
+    width: 5vw;
+    text-align: center;
+    left: 20vw;
+    top:-8vh;
+}
+
+.box6 {
+    background-color: brown;
+    position: relative;
+    height: 5vh;
+    width: 5vw;
+    text-align: center;
+    left: 26vw;
+    top:-13vh;
+}
+
+.box7 {
+    background-color: brown;
+    position: relative;
+    height: 5vh;
+    width: 5vw;
+    text-align: center;
+    left: 14vw;
+    top:-11vh;
+}
+
+.box8 {
+    background-color: brown;
+    position: relative;
+    height: 5vh;
+    width: 5vw;
+    text-align: center;
+    left: 20vw;
+    top:-16vh;
+}
+
+.box9 {
+    background-color: brown;
+    position: relative;
+    height: 5vh;
+    width: 5vw;
+    text-align: center;
+    left: 26vw;
+    top:-21vh;
+}
+
+.player{
+    background-color:white;
+    color: black;
+     height: 6vh;
+    width: 5vw;
+    position :relative;
+    left: 74vw;
+    top:-37vh;
+} 
+
+
+
+.reset{
+    position: relative;
+    top:-4vh;
+    left:103vh;
+}
+
+</style>
+
+<body>
+    
+
+<header>
+    <h2>Tic Tac Toe</h2>
+</header>
+
+<div class="container">
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+<div class="box6"></div>
+<div class="box7"></div>
+<div class="box8"></div>
+<div class="box9"></div>
+
+</div>
+
+<button class="reset">restart</button>
+
+<div class="player">player1 turn </div>
+
+
+
+
+
+
+
+<script>
+
+
+let p=0;
+let myplayer=document.querySelector(".player")
+console.log(myplayer)
+let mydiv =[[null,null,null],[null,null,null],[null,null,null]];
+let win=false;
+let k=1;
+
+for(let i=0;i<3;i++){
+    
+for(let j=0;j<3;j++){
+    let box="box"+k;
+mydiv[i][j]= document.querySelector("."+box)
+
+k++;
+console.log(mydiv);
+
+}
+}
+
+let turn="player1"
+
+for(let i=0;i<3;i++){
+    
+for( let j=0;j<3;j++){
+    
+mydiv[i][j].addEventListener("click",()=>{
+
+if(mydiv[i][j].innerText==="" ){
+if(turn==="player1"){
+
+    mydiv[i][j].innerText="X";
+    turn="player2"
+    myplayer.innerText="player2 turn"
+    myplayer.style.backgroundColor = "orange";
+    p++;
+}
+
+else if(turn==="player2"){
+
+    mydiv[i][j].innerText="O";
+    turn="player1"
+    myplayer.innerText="player1 turn"
+myplayer.style.backgroundColor = "white";
+   p++;
+}
+
+
+}
+
+
+
+
+if(mydiv[0][0].innerText==="X" &&
+ mydiv[1][1].innerText==="X" && 
+ mydiv[2][2].innerText==="X"){
+    alert("player1 wins");
+}
+
+else if(mydiv[0][0].innerText==="X" && mydiv[0][1].innerText==="X"&&mydiv[0][2].innerText==="X"){
+    win=true;
+    alert("player1 wins");
+}
+
+
+else if(mydiv[0][0].innerText==="X" && mydiv[1][0].innerText==="X"&&mydiv[2][0].innerText==="X"){
+    win=true;
+    alert("player1 wins");
+}
+
+
+else if(mydiv[0][1].innerText==="X" && mydiv[1][1].innerText==="X"&&mydiv[2][1].innerText==="X"){
+    alert("player1 wins");
+    win=true;
+}
+
+
+else if(mydiv[0][2].innerText==="X" && mydiv[1][1].innerText==="X"&&mydiv[2][0].innerText==="X"){
+    alert("player1 wins");
+    win=true;
+}
+
+
+else if(mydiv[1][0].innerText==="X" && mydiv[1][1].innerText==="X"&&mydiv[1][2].innerText==="X"){
+    alert("player1 wins");
+    win=true;
+}
+
+
+else if(mydiv[2][0].innerText==="X" && mydiv[2][1].innerText==="X"&&mydiv[2][2].innerText==="X"){
+    alert("player1 wins");
+    win=true;
+}
+
+
+else if(mydiv[0][2].innerText==="X" && mydiv[1][2].innerText==="X"&&mydiv[2][2].innerText==="X"){
+    alert("player1 wins");
+    win=true;
+}
+
+
+
+//--------------------//
+
+
+
+else if(mydiv[0][0].innerText==="O" && mydiv[1][1].innerText==="O" && mydiv[2][2].innerText==="O" ){
+    alert("player2 wins");
+    win=true;
+}
+
+else if(mydiv[0][0].innerText==="O"  && mydiv[0][1].innerText==="O" && mydiv[0][2].innerText==="O" ){
+    alert("player2 wins");
+    win=true;
+}
+
+
+else if(mydiv[0][0].innerText==="O"  && mydiv[1][0].innerText==="O" &&mydiv[2][0].innerText==="O" ){
+    alert("player2 wins");
+    win=true;
+}
+
+
+else if(mydiv[0][1].innerText==="O"  && mydiv[1][1].innerText==="O" &&mydiv[2][1].innerText==="O" ){
+    alert("player2 wins");
+    win=true;
+}
+
+
+else if(mydiv[0][2].innerText==="O"  && mydiv[1][1].innerText==="O" &&mydiv[2][0].innerText==="O" ){
+    alert("player2 wins");
+    win=true;
+}
+
+
+else if(mydiv[1][0].innerText==="O"  && mydiv[1][1].innerText==="O" &&mydiv[1][2].innerText==="O" ){
+    alert("player2 wins");
+    win=true;
+}
+
+
+else if(mydiv[2][0].innerText==="O"  && mydiv[2][1].innerText==="O" &&mydiv[2][2].innerText==="O" ){
+    alert("player2 wins");
+    win=true;
+}
+
+
+else if(mydiv[0][2].innerText==="O"  && mydiv[1][2].innerText==="O" &&mydiv[2][2].innerText==="O" ){
+    alert("player2 wins");
+    win=true; 
+}
+
+if(win==true){
+for(let l=0;l<3;l++){
+    for(let z=0;z<3;z++){
+        mydiv[l][z].innerText = "";
+    }
+}
+win=false;
+turn="player1"
+p=0;
+}
+
+if(p==9 && win!=true){
+    alert("Draw!");
+for(let l=0;l<3;l++){
+    for(let z=0;z<3;z++){
+        mydiv[l][z].innerText = "";
+    }
+}
+p=0;
+turn="player1"
+}
+
+
+
+})
+
+
+}
+}
+
+
+
+mybtn = document.querySelector(".reset");
+console.log(mybtn)
+mybtn.addEventListener("click",()=>{
+if(turn==="player1"){
+    alert("player2 wins")
+    win=true;
+    turn="player1"
+}
+else{
+    turn="player1"
+    alert("player1 wins")
+    win=true;
+}
+for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    mydiv[i][j].innerText = "";
+  }
+}
+
+
+})
+
+
+
+if(p==8 && win!=true){
+    alert("Draw!");
+    for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    mydiv[i][j].innerText = "";
+  }
+}
+p=0;
+}
+
+
+</script>
+
+</body>
+</html>
